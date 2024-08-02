@@ -2,10 +2,7 @@
 import { ref } from 'vue'
 
 const num = ref(1)
-// console.log(num.value);
-// setInterval(() => {
-//     num.value++
-// }, 500);
+
 function clickme() {
   num.value++
 }
