@@ -1,80 +1,68 @@
-<script setup>
-import { ref } from 'vue'
-const num = ref(0)
-const htmltemplate = ' <h1>餐點圖片</h1> '
-
-setInterval(() => {
-  num.value++
-}, 500)
-
-const text = ref('今日菜單')
-const menu = ref('選單')
-const imgurl = ref(
-  'https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-)
-const ischecked = ref('true')
-const arraycheckbox = ref([])
-const radiovalue = ref('male')
-const handleclick = () => {
-  console.log('我被觸發了')
-}
-</script>
-
 <template>
-  <div>
-    <h1>{{ text }}</h1>
-    <input type="text" v-model="text" />
+  <h1>六角學院2024Vue前端新手營</h1>
+  <hr />
+  <hr />
+  <hr />
 
-    {{ menu }}
-    <select name="" id="" v-model="day">
-      <option value="義大利麵">義大利麵</option>
-      <option value="鮭魚佐黃檸">鮭魚佐黃檸</option>
-      <option value="羊排特餐">羊排特餐</option>
-    </select>
-
-    <hr />
-    <h1>請勿思考超過300,000秒喔{{ num }}</h1>
-
-    {{ htmltemplate }}
-    <div v-html="htmltemplate"></div>
-    <!--  會出現h1未解決-->
-
-    <hr />
-    <img :src="imgurl" alt="" />
-    <hr />
-
-    <hr />
-    {{ ischecked }}
-    <input type="checkbox" v-model="ischecked" />
-    <input type="text" :disabled="ischecked" />
-
-    <div class="box" :style="{ transform: ischecked ? 'rotate(45deg)' : null }"></div>
-    <div class="box" :style="{ backgroundColor: ischecked ? 'blue' : 'yellow' }"></div>
-    <hr />
-    {{ arraycheckbox }}
-    <input type="checkbox" v-model="arraycheckbox" value="好吃" />
-    <input type="checkbox" v-model="arraycheckbox" value="普普" />
-    <input type="checkbox" v-model="arraycheckbox" value="美味😍😍" />
-
-    <hr />
-    {{ radiovalue }}
-    <input type="radio" v-model="radiovalue" value="male" />
-    <input type="radio" v-model="radiovalue" value="female" />
-
-    <hr />
-
-    <button type="button" @click="handleclick">主廚精選請點我</button>
-    <h2>事件修飾符</h2>
-    <a href="#" @click.prevent="handleclick">飲料請點我</a>
-    <h2>按鍵修飾符</h2>
-    <input type="text" v-on:keydown.enter="handleclick" />
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">品項</th>
+        <th scope="col">描述</th>
+        <th scope="col">價格</th>
+        <th scope="col">庫存</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>珍珠奶茶</td>
+        <td><small>香濃奶茶搭配QQ珍珠</small></td>
+        <td>50</td>
+        <td><button>-</button>20<button>+</button></td>
+      </tr>
+      <tr>
+        <td>冬瓜檸檬</td>
+        <td><small>清新冬瓜配上新鮮檸檬</small></td>
+        <td>45</td>
+        <td><button>-</button>18<button>+</button></td>
+      </tr>
+      <tr>
+        <td>翡翠檸檬</td>
+        <td><small>綠茶與檸檬的完美結合</small></td>
+        <td>55</td>
+        <td><button>-</button>34<button>+</button></td>
+      </tr>
+      <tr>
+        <td>四季春茶</td>
+        <td><small>香醇四季春茶，回甘無比</small></td>
+        <td>45</td>
+        <td><button>-</button>10<button>+</button></td>
+      </tr>
+      <tr>
+        <td>阿薩姆奶茶</td>
+        <td><small>阿薩姆紅茶搭配香醇鮮奶</small></td>
+        <td>50</td>
+        <td><button>-</button>25<button>+</button></td>
+      </tr>
+      <tr>
+        <td>檸檬冰茶</td>
+        <td><small>檸檬與冰茶的清新組合</small></td>
+        <td>45</td>
+        <td><button>-</button>20<button>+</button></td>
+      </tr>
+      <tr>
+        <td>芒果綠茶</td>
+        <td><small>芒果與綠茶的獨特風味</small></td>
+        <td>55</td>
+        <td><button>-</button>18<button>+</button></td>
+      </tr>
+      <tr>
+        <td>抹茶拿鐵</td>
+        <td><small>抹茶與鮮奶的絕配</small></td>
+        <td>60</td>
+        <td><button>-</button>20<button>+</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>第一週作業by Mia</p>
 </template>
-<style>
-.box {
-  height: 20px;
-  width: 20px;
-  background-color: brown;
-  transition: 1s all;
-}
-</style>
