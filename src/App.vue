@@ -66,3 +66,7 @@
   </table>
   <p>第一週作業by Mia</p>
 </template>
+
+<script setup></script>
+
+<style></style>
